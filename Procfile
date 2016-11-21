@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/peak-dashboard.jar clojure.main -m peak-dashboard.server
+web: java $JVM_OPTS -cp target/brindha-peakdashboard.jar clojure.main -m brindha-peakdashboard.server

@@ -1,4 +1,4 @@
-(defproject peak-dashboard "0.1.0-SNAPSHOT"
+(defproject brindha-peakdashboard "0.1.0-SNAPSHOT"
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [org.clojure/clojurescript "1.9.229"]
                  [reagent "0.6.0"]
@@ -18,7 +18,7 @@
                                     "test/js"]
 
   :figwheel {:css-dirs ["resources/public/css"]
-             :ring-handler peak-dashboard.handler/dev-handler}
+             :ring-handler brindha-peakdashboard.handler/dev-handler}
 
   :repl-options {:nrepl-middleware [cemerick.piggieback/wrap-cljs-repl]}
 
@@ -37,8 +37,8 @@
   {:builds
    [{:id           "dev"
      :source-paths ["src/cljs"]
-     :figwheel     {:on-jsload "peak-dashboard.core/mount-root"}
-     :compiler     {:main                 peak-dashboard.core
+     :figwheel     {:on-jsload "brindha-peakdashboard.core/mount-root"}
+     :compiler     {:main                 brindha-peakdashboard.core
                     :output-to            "resources/public/js/compiled/app.js"
                     :output-dir           "resources/public/js/compiled/out"
                     :asset-path           "js/compiled/out"
@@ -50,7 +50,7 @@
     {:id           "min"
      :source-paths ["src/cljs"]
      :jar true
-     :compiler     {:main            peak-dashboard.core
+     :compiler     {:main            brindha-peakdashboard.core
                     :output-to       "resources/public/js/compiled/app.js"
                     :optimizations   :advanced
                     :closure-defines {goog.DEBUG false}
@@ -58,17 +58,17 @@
 
     {:id           "test"
      :source-paths ["src/cljs" "test/cljs"]
-     :compiler     {:main          peak-dashboard.runner
+     :compiler     {:main          brindha-peakdashboard.runner
                     :output-to     "resources/public/js/compiled/test.js"
                     :output-dir    "resources/public/js/compiled/test/out"
                     :optimizations :none}}
     ]}
 
-  :main peak-dashboard.server
+  :main brindha-peakdashboard.server
 
-  :aot [peak-dashboard.server]
+  :aot [brindha-peakdashboard.server]
 
-  :uberjar-name "peak-dashboard.jar"
+  :uberjar-name "brindha-peakdashboard.jar"
 
   :prep-tasks [["cljsbuild" "once" "min"] "compile"]
   )
